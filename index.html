@@ -758,6 +758,55 @@
 
         /* 暂时隐藏人名 */
         .hidden-names { display: none; }
+
+        /* Final program: scoped styles preserve the existing website. */
+        #program, #morning-program, #afternoon-program { scroll-margin-top: 95px; }
+        .program-summary { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:24px; border:1px solid #e0d6eb; border-radius:10px; background:linear-gradient(120deg,#f6f0fc,#fff); }
+        .program-eyebrow { display:block; color:#6a0dad; font-size:.78rem; font-weight:700; letter-spacing:.09em; }
+        .program-summary h3 { display:block; margin:5px 0 8px; font-size:1.65rem; }
+        .program-summary p { margin:0; font-size:.95rem; }
+        .program-timezone { color:#655373; font-size:.88rem; text-align:right; flex-shrink:0; }
+        .program-timezone strong { color:#4b0082; }
+        .program-jump { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 25px; }
+        .program-jump a { border:1px solid #d9c9e8; border-radius:24px; padding:7px 16px; color:#5c168c; font-size:.9rem; text-decoration:none; }
+        .program-jump a:hover, .program-jump a:focus-visible { background:#f0e8fa; }
+        .program-session { border:1px solid #e0d6eb; border-radius:10px; overflow:hidden; }
+        .program-session-header { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 24px; background:linear-gradient(110deg,#4b0082,#6a0dad); color:#fff; }
+        .program-session-header .program-eyebrow { color:#e6d5f7; }
+        .program-session-header h3 { margin:1px 0 0; color:#fff; font-size:1.4rem; }
+        .program-session-header p { color:#fff; margin:0; font-size:.9rem; }
+        .program-table { width:100%; border-collapse:collapse; table-layout:fixed; }
+        .program-table th { padding:11px 24px; text-align:left; text-transform:uppercase; font-size:.73rem; letter-spacing:.07em; color:#735c85; background:#faf7fd; border-bottom:1px solid #e0d6eb; }
+        .program-table th:first-child { width:160px; }
+        .program-table td { padding:19px 24px; vertical-align:top; border-bottom:1px solid #ece5f2; overflow-wrap:anywhere; }
+        .program-table tr:last-child td { border-bottom:0; }
+        .program-table tr:nth-child(even) { background:#fcfafd; }
+        .program-time { white-space:nowrap; color:#5b3477; font-size:.93rem; font-weight:600; font-variant-numeric:tabular-nums; }
+        .program-speaker { display:flex; flex-wrap:wrap; align-items:center; gap:10px; color:#3e2252; font-size:1.04rem; font-weight:700; line-height:1.5; }
+        .program-talk { margin-top:5px; line-height:1.65; color:#54495c; font-size:.96rem; }
+        .program-badge { font-size:.65rem; letter-spacing:.07em; text-transform:uppercase; color:#6a0dad; border:1px solid #d8bfe9; background:#f3eafb; border-radius:5px; padding:2px 7px; }
+        .program-table .program-keynote { background:#f7f0fc; }
+        .program-table .program-break { background:#f2f3f5; }
+        .program-break .program-speaker { color:#6d6873; font-weight:500; }
+        .program-table .program-panel { background:#f0e8fa; }
+        .program-panel .program-talk { font-size:.9rem; line-height:1.8; }
+        .program-lunch { display:flex; gap:28px; align-items:center; margin:20px 0; padding:17px 24px; border:1px dashed #cfbedf; border-radius:8px; background:#faf7fd; color:#5b3477; }
+        #program .program-note { margin:22px 0 0; font-size:.82rem; color:#75677e; line-height:1.8; }
+        .program-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+        @media (max-width:600px) {
+            .program-summary { padding:18px; flex-direction:column; align-items:flex-start; gap:14px; }
+            .program-summary h3 { font-size:1.35rem; }
+            .program-timezone { text-align:left; }
+            .program-session-header { padding:16px; flex-direction:column; align-items:flex-start; gap:7px; }
+            .program-table th, .program-table td { padding:14px 12px; }
+            .program-table th:first-child { width:102px; }
+            .program-time { font-size:.8rem; }
+            .program-speaker { font-size:.95rem; }
+            .program-talk { font-size:.87rem; }
+            .program-lunch { padding:16px 12px; gap:16px; }
+            .program-jump a { font-size:.8rem; padding:7px 12px; }
+        }
+
     </style>
 </head>
 <body>
@@ -771,6 +820,7 @@
             <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#program">Program</a></li>
                     <li><a href="#submission">Submission Process</a></li>
                     <li class="hidden-names"><a href="#speakers">Invited Speakers</a></li>
                     <li><a href="#organizers">Organizers</a></li>
@@ -782,9 +832,9 @@
     <!-- 横幅区 -->
     <header class="banner">
         <h1>PQC-FHE 2026: Workshop on the Design and Analysis of<br>Post-Quantum Cryptography and Fully Homomorphic Encryption</h1>
-        <p>December 7–11, 2026 | Hong Kong Polytechnic University</p>
+        <p>December 7, 2026 (Monday) | Hong Kong Polytechnic University · Room DE306</p>
         <p style="font-size: 0.9rem; opacity: 0.85; margin-top: 5px;">Asiacrypt 2026 affiliated workshop</p>
-        <div class="date-ribbon">December 7–11, 2026</div>
+        <div class="date-ribbon">Workshop: December 7, 2026 · ASIACRYPT: December 7–11, 2026</div>
     </header>
 
     <!-- 主要内容容器 -->
@@ -809,6 +859,120 @@
                 <li><strong>Standardization of PQC and FHE:</strong> NIST PQC and ISO/IEC 28033 FHE standardization; benchmarking, migration roadmaps, and open-source ecosystems.</li>
             </ul>
         </section>
+
+        <!-- Final program transcribed from the official PDF, 25 November 2026 -->
+        <section id="program" class="content">
+            <h2><i class="fas fa-calendar-alt" aria-hidden="true"></i> Program</h2>
+            <div class="program-summary">
+                <div><span class="program-eyebrow">PQC-FHE 2026 · Monday</span><h3>December 7, 2026</h3><p>The Hong Kong Polytechnic University · Main Campus · <strong>Room DE306</strong></p></div>
+                <div class="program-timezone">All times are Hong Kong Time<br><strong>UTC+8</strong></div>
+            </div>
+            <div class="program-jump" aria-label="Program sessions"><a href="#morning-program">Morning · 09:30–12:20</a><a href="#afternoon-program">Afternoon · 14:10–17:40</a></div>
+            <div id="morning-program">
+            <div class="program-session">
+                <div class="program-session-header">
+                    <div><span class="program-eyebrow">FHE TRACK</span><h3>Morning</h3></div>
+                    <p>Session Chair: <strong>Xianhui Lu</strong></p>
+                </div>
+                <table class="program-table">
+                    <caption class="program-sr-only">Morning program — session chair Xianhui Lu</caption>
+                    <thead><tr><th scope="col">Time</th><th scope="col">Speaker / Session</th></tr></thead>
+                    <tbody>
+                    <tr class="program-keynote">
+                        <td class="program-time">09:30–10:10</td>
+                        <td><div class="program-speaker">Jung Hee Cheon<span class="program-badge">Keynote</span></div>
+                            <div class="program-talk">CKKS and encrypted AI</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">10:10–10:30</td>
+                        <td><div class="program-speaker">Craig Gentry</div>
+                            <div class="program-talk">FHE on a Dataflow Chip: TFHE's blind rotation on 2048 cores</div></td>
+                    </tr>
+                    <tr class="program-break">
+                        <td class="program-time">10:30–11:00</td>
+                        <td><div class="program-speaker">Coffee Break</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">11:00–11:20</td>
+                        <td><div class="program-speaker">Renaud Sirdey</div>
+                            <div class="program-talk">On the CPAD Security of FHE with Linear Homomorphic Addition: Further Insights and New Practical Attacks in the KRD Model</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">11:20–11:40</td>
+                        <td><div class="program-speaker">Anamaria Costache</div>
+                            <div class="program-talk">Towards efficient vFHE: (I) the FHE perspective</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">11:40–12:00</td>
+                        <td><div class="program-speaker">Dario Fiore</div>
+                            <div class="program-talk">Towards efficient vFHE: (II) the proof perspective</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">12:00–12:20</td>
+                        <td><div class="program-speaker">Ruida Wang</div>
+                            <div class="program-talk">homomorphism in expectation: leveled HE from additive homomorphism</div></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="program-lunch"><span class="program-time">12:30–14:00</span><strong>Lunch</strong></div>
+            <div id="afternoon-program">
+            <div class="program-session">
+                <div class="program-session-header">
+                    <div><span class="program-eyebrow">PQC + FHE + PANEL</span><h3>Afternoon</h3></div>
+                    <p>Session Chair: <strong>Renaud Sirdey</strong></p>
+                </div>
+                <table class="program-table">
+                    <caption class="program-sr-only">Afternoon program — session chair Renaud Sirdey</caption>
+                    <thead><tr><th scope="col">Time</th><th scope="col">Speaker / Session</th></tr></thead>
+                    <tbody>
+                    <tr class="program-keynote">
+                        <td class="program-time">14:10–14:50</td>
+                        <td><div class="program-speaker">Huaxiong Wang<span class="program-badge">Keynote</span></div>
+                            <div class="program-talk">Privacy-Preserving Technologies and FHE in AI</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">14:50–15:10</td>
+                        <td><div class="program-speaker">Khoa Nguyen</div>
+                            <div class="program-talk">Post-Quantum Anonymity-Preserving Authentication: 15 Years of Development</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">15:10–15:30</td>
+                        <td><div class="program-speaker">Ilaria Chillotti &amp; Damien Ligier</div>
+                            <div class="program-talk">Homomorphic Encryption and Bootstrapping for Real Matrices over Conjugate-Invariant Rings</div></td>
+                    </tr>
+                    <tr class="program-break">
+                        <td class="program-time">15:30–16:00</td>
+                        <td><div class="program-speaker">Coffee Break</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">16:00–16:20</td>
+                        <td><div class="program-speaker">Jules Dumezy</div>
+                            <div class="program-talk">Poulpy: An End-to-End FHE Stack Built on the Bivariate Torus Representation</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">16:20–16:40</td>
+                        <td><div class="program-speaker">Yunhao Wang</div>
+                            <div class="program-talk">Snake-eye Resistant Encryption from RLWE and Applications to Oblivious Message Retrieval</div></td>
+                    </tr>
+                    <tr>
+                        <td class="program-time">16:40–17:00</td>
+                        <td><div class="program-speaker">Zehui He</div>
+                            <div class="program-talk">Fox-H Function Based Noise Analysis for BFV</div></td>
+                    </tr>
+                    <tr class="program-panel">
+                        <td class="program-time">17:00–17:40</td>
+                        <td><div class="program-speaker">FHE Panel Discussion<span class="program-badge">Panel</span></div>
+                            <div class="program-talk">Jung Hee Cheon · Ilaria Chillotti · Anamaria Costache · Dario Fiore · Craig Gentry · Damien Ligier · Xianhui Lu · Renaud Sirdey · Huaxiong Wang</div></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <p class="program-note">Regular talks: 20 min · Keynotes: 40 min · FHE panel: 40 min<br>Program · November 25, 2026</p>
+        </section>
+
 
         <!-- PDF §6 Submission process -->
         <section id="submission" class="content delay-1">
@@ -922,8 +1086,8 @@
 
                 <div class="date-card">
                     <h4><i class="fas fa-calendar-check"></i> Workshop Date</h4>
-                    <div class="date">December 7–11, 2026</div>
-                    <p>Alongside ASIACRYPT 2026</p>
+                    <div class="date">December 7, 2026</div>
+                    <p>ASIACRYPT 2026: December 7–11</p>
                 </div>
             </div>
         </section>
@@ -974,10 +1138,11 @@
         <div class="footer-content">
             <div class="footer-logo">PQC-FHE 2026</div>
             <p>Workshop on the Design and Analysis of Post-Quantum Cryptography and Fully Homomorphic Encryption</p>
-            <p>December 7–11, 2026 | Hong Kong Polytechnic University</p>
+            <p>December 7, 2026 | Hong Kong Polytechnic University · Room DE306</p>
 
             <div class="footer-links">
                 <a href="#about">About</a>
+                <a href="#program">Program</a>
                 <a href="#submission">Submission Process</a>
                 <a href="#speakers" class="hidden-names">Invited Speakers</a>
                 <a href="#organizers">Organizers</a>
